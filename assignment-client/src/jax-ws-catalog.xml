@@ -4,6 +4,10 @@
     <system systemId="http://localhost:9090/assignment-server/UserWebService?xsd=1" uri="wsdl/localhost_9090/assignment-server/UserWebService.xsd_1.xsd"/>
     <system systemId="http://localhost:6060/assignment-server/UserWebService?wsdl" uri="wsdl/localhost_6060/assignment-server/UserWebService.wsdl"/>
     <system systemId="http://localhost:6060/assignment-server/UserWebService?xsd=1" uri="wsdl/localhost_6060/assignment-server/UserWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:6060/assignment-server/AdminWebService?wsdl" uri="wsdl/localhost_6060/assignment-server/AdminWebService.wsdl"/>
+    <system systemId="http://localhost:6060/assignment-server/AdminWebService?xsd=1" uri="wsdl/localhost_6060/assignment-server/AdminWebService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/assignment-server/UserWebService?wsdl" uri="wsdl/localhost_8080/assignment-server/UserWebService.wsdl"/>
     <system systemId="http://localhost:8080/assignment-server/UserWebService?xsd=1" uri="wsdl/localhost_8080/assignment-server/UserWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/assignment-server/AdminWebService?wsdl" uri="wsdl/localhost_8080/assignment-server/AdminWebService.wsdl"/>
+    <system systemId="http://localhost:8080/assignment-server/AdminWebService?xsd=1" uri="wsdl/localhost_8080/assignment-server/AdminWebService.xsd_1.xsd"/>
 </catalog>

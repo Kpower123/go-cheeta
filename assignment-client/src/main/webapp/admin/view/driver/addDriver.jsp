@@ -1,11 +1,11 @@
 <%-- 
     Document   : addDriver
     Created on : Aug 13, 2022, 4:53:13 PM
-    Author     : thilan
+    Author     : kaniya
 --%>
 
+<%@page import="assignment.Driver"%>
 <%@page import="java.util.List"%>
-<%@page import="assignment.Branch"%>
 <%@include file="../../includes/wslAdminConnection.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,15 +13,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Add Driver </title>
-        <!--<link rel="stylesheet" href="style.css">-->
-        <link rel="stylesheet" href="/assignment-client/assets/css/style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-
-        <!-- Boxicons CDN Link -->
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <%@include file="../../includes/html/header.jsp" %>
     </head>
     <body>
 
@@ -88,31 +81,33 @@
                 <div class="card m-3 mb-2">
                     <div class="card-body">
                         <table class="table table-hover">
-                            <% List<Branch> branches = adminProxy.getBranches(); %>
+                            <% List<Driver> drivers = adminProxy.getDrivers(); %>
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Mobile</th>
-                                    <th scope="col">Fixed Line</th>
-                                    <th scope="col">Address Line</th>
-                                    <th scope="col">City</th>
+                                    <th scope="col">License ID</th>
+                                    <th scope="col">NIC</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <% for(Branch branch: branches) { %>
+                                <% for(Driver driver: drivers) { %>
                                 
                                 <tr>
-                                    <th scope="row"><% out.print(branches.indexOf(branch)+1); %></th>
-                                    <td><% out.print(branch.getEmail()); %></td>
-                                    <td><% out.print(branch.getMobile()); %></td>
-                                    <td><% out.print(branch.getFixedLine()); %></td>
-                                    <td><% out.print(branch.getAddressLine()); %></td>
-                                    <td><% out.print(branch.getCity()); %></td>
+                                    <th scope="row"><% out.print(drivers.indexOf(driver)+1); %></th>
+                                    <td><%= driver.getFirstName() %></td>
+                                    <td><%= driver.getLastName() %></td>
+                                    <td><%= driver.getEmail() %></td>
+                                    <td><%= driver.getMobile() %></td>
+                                    <td><%= driver.getDrivingLicens()%></td>
+                                    <td><%= driver.getNic()%></td>
                                     <td>
-                                        <a href="./editBranch.jsp?id=<% out.print(branch.getBranchId()); %>" class="btn btn-sm btn-warning"><i class="mdi mdi-file-document-edit-outline align-middle me-1"></i>Edit</a>
-                                        <a href="/assignment-client/admin/controller/branch/deleteBranch.jsp?id=<% out.print(branch.getBranchId()); %>" class="btn btn-sm btn-danger"><i class="mdi mdi-delete-forever-outline align-middle me-1"></i>Delete</a>
+                                        <a href="./editDriver.jsp?id=<%= driver.getPersonID()%>" class="btn btn-sm btn-warning"><i class="mdi mdi-file-document-edit-outline align-middle me-1"></i>Edit</a>
+                                        <a href="/assignment-client/admin/controller/driver/deleteDriver.jsp?id=<%= driver.getPersonID()%>" class="btn btn-sm btn-danger"><i class="mdi mdi-delete-forever-outline align-middle me-1"></i>Delete</a>
                                     </td>
                                 </tr>
                                 

@@ -27,12 +27,37 @@
         </li>
         
         <li>
+            <a href="/assignment-client/admin/view/branch/addAdmin.jsp">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Branch Admin</span>
+            </a>
+        </li>
+        
+        <li>
             <a href="/assignment-client/admin/view/driver/addDriver.jsp">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Driver</span>
             </a>
         </li>
+        
         <li>
+            <a href="/assignment-client/admin/view/vehicle/addType.jsp">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Vehicle Type</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/assignment-client/admin/view/vehicle/add.jsp">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Vehicle</span>
+            </a>
+        </li>
+        
+        
+        
+        
+<!--        <li>
             <a href="#">
                 <i class='bx bx-list-ul' ></i>
                 <span class="links_name">Order list</span>
@@ -85,6 +110,6 @@
                 <i class='bx bx-log-out'></i>
                 <span class="links_name">Log out</span>
             </a>
-        </li>
+        </li>-->
     </ul>
 </div>
