@@ -14,18 +14,24 @@
     String password     = request.getParameter("password");
     
     
+    out.print(mobile);
+    out.print("<br>");
+    out.print(password);
+    out.print("<br>");
+    
     UserWebService_Service service = new UserWebService_Service();
     UserWebService proxy = service.getUserWebServicePort();
-       
-    
+          
     HttpSession ses = request.getSession();
     
     if (proxy.authUser(mobile, password)) {
-        ses.setAttribute("success", "User login Successfully");
+//        ses.setAttribute("success", "User login Successfully");
+        response.sendRedirect("/assignment-client/admin/view/index.jsp");
     } else {
         ses.setAttribute("error", "User login unsuccessful. Please try again");
+        response.sendRedirect("/assignment-client/index.jsp");
     }
     
-    response.sendRedirect("/assignment-client/index.jsp");
+    
 
 %>
