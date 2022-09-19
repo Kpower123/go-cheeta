@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://assignment/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://assignment/">
+
+<xs:element name="acceptDriverBooking" type="tns:acceptDriverBooking"/>
+
+<xs:element name="acceptDriverBookingResponse" type="tns:acceptDriverBookingResponse"/>
+
+<xs:element name="authDriver" type="tns:authDriver"/>
+
+<xs:element name="authDriverResponse" type="tns:authDriverResponse"/>
+
+<xs:element name="completeBooking" type="tns:completeBooking"/>
+
+<xs:element name="completeBookingResponse" type="tns:completeBookingResponse"/>
+
+<xs:element name="getBookingsByDriverId" type="tns:getBookingsByDriverId"/>
+
+<xs:element name="getBookingsByDriverIdResponse" type="tns:getBookingsByDriverIdResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="rejectDriverBooking" type="tns:rejectDriverBooking"/>
+
+<xs:element name="rejectDriverBookingResponse" type="tns:rejectDriverBookingResponse"/>
+
+<xs:complexType name="acceptDriverBooking">
+<xs:sequence>
+<xs:element name="bookingId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acceptDriverBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rejectDriverBooking">
+<xs:sequence>
+<xs:element name="bookingId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rejectDriverBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookingsByDriverId">
+<xs:sequence>
+<xs:element name="driverId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookingsByDriverIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:booking" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="booking">
+<xs:sequence>
+<xs:element name="bookingId" type="xs:int"/>
+<xs:element name="driverId" type="xs:int"/>
+<xs:element name="dropCity" type="xs:int"/>
+<xs:element name="dropstreet" type="xs:string" minOccurs="0"/>
+<xs:element name="pickCity" type="xs:int"/>
+<xs:element name="pickStreet" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:int"/>
+<xs:element name="userId" type="xs:int"/>
+<xs:element name="vehicleId" type="xs:int"/>
+<xs:element name="vehicleType" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authDriver">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authDriverResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="completeBooking">
+<xs:sequence>
+<xs:element name="bookingId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="completeBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

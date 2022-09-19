@@ -1,7 +1,7 @@
 <%-- 
     Document   : addAdmin
     Created on : Aug 20, 2022, 3:39:25 PM
-    Author     : thilan
+    Author     : kaniya
 --%>
 
 <%@page import="assignment.Admin"%>
@@ -38,7 +38,7 @@
 
                 <div class="profile-details">
                     <img src="images/nike.jpg" alt="">
-                    <span class="admin_name">KANIYA</span>
+                    <span class="admin_name">Admin</span>
                     <i class='bx bx-chevron-down' ></i>
                 </div>
             </nav>

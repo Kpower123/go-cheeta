@@ -1,7 +1,7 @@
 <%-- 
     Document   : sidenav
     Created on : Aug 13, 2022, 12:06:31 PM
-    Author     : thilan
+    Author     : kaniya
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,46 +13,74 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="#" class="active">
-                <i class='bx bx-grid-alt' ></i>
+            <a href="/assignment-client/admin/view/index.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/index.jsp")) { %>
+               active
+               <% } %>">
+                <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Dashboard</span>
             </a>
         </li>
         
         <li>
-            <a href="/assignment-client/admin/view/branch/addBranch.jsp">
+            <a href="/assignment-client/admin/view/branch/addBranch.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/branch/addBranch.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Branch</span>
             </a>
         </li>
         
         <li>
-            <a href="/assignment-client/admin/view/branch/addAdmin.jsp">
+            <a href="/assignment-client/admin/view/branch/addAdmin.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/branch/addAdmin.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Branch Admin</span>
             </a>
         </li>
         
         <li>
-            <a href="/assignment-client/admin/view/driver/addDriver.jsp">
+            <a href="/assignment-client/admin/view/driver/addDriver.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/driver/addDriver.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Driver</span>
             </a>
         </li>
         
         <li>
-            <a href="/assignment-client/admin/view/vehicle/addType.jsp">
+            <a href="/assignment-client/admin/view/vehicle/addType.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/vehicle/addType.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Vehicle Type</span>
             </a>
         </li>
         
         <li>
-            <a href="/assignment-client/admin/view/vehicle/add.jsp">
+            <a href="/assignment-client/admin/view/vehicle/add.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/vehicle/add.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Vehicle</span>
             </a>
         </li>
+        
+<!--        <li>
+            <a href="/assignment-client/admin/view/distance/all.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/admin/view/distance/all.jsp")) { %>
+               active
+               <% } %>">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Distance</span>
+            </a>
+        </li>-->
         
         
         

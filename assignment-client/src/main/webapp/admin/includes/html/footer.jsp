@@ -1,7 +1,7 @@
 <%-- 
     Document   : footer
     Created on : Aug 13, 2022, 12:15:53 PM
-    Author     : thilan
+    Author     : kaniya
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

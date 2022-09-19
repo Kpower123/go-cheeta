@@ -99,13 +99,13 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/assignment-server/UserWebService.wsdl</wsdlFile>
+                                <wsdlFile>localhost_8080/assignment-service/UserWebService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/assignment-server/UserWebService?wsdl</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/assignment-service/UserWebService?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/UserWebService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-UserWebService</id>
@@ -117,13 +117,49 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/assignment-server/AdminWebService.wsdl</wsdlFile>
+                                <wsdlFile>localhost_8080/assignment-service/CustomerWebService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/assignment-server/AdminWebService?wsdl</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/assignment-service/CustomerWebService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/CustomerWebService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-CustomerWebService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/assignment-service/DriverWebService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/assignment-service/DriverWebService?wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/DriverWebService.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-DriverWebService</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/assignment-service/AdminWebService.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost:8080/assignment-service/AdminWebService?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/AdminWebService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-AdminWebService</id>

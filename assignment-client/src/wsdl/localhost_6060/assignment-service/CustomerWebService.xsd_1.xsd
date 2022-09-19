@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://assignment/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://assignment/">
+
+<xs:element name="acceptBooking" type="tns:acceptBooking"/>
+
+<xs:element name="acceptBookingResponse" type="tns:acceptBookingResponse"/>
+
+<xs:element name="addCustomer" type="tns:addCustomer"/>
+
+<xs:element name="addCustomerResponse" type="tns:addCustomerResponse"/>
+
+<xs:element name="authCustomer" type="tns:authCustomer"/>
+
+<xs:element name="authCustomerResponse" type="tns:authCustomerResponse"/>
+
+<xs:element name="getBookingsByUserId" type="tns:getBookingsByUserId"/>
+
+<xs:element name="getBookingsByUserIdResponse" type="tns:getBookingsByUserIdResponse"/>
+
+<xs:element name="getDiatanceByDropAndPickCity" type="tns:getDiatanceByDropAndPickCity"/>
+
+<xs:element name="getDiatanceByDropAndPickCityResponse" type="tns:getDiatanceByDropAndPickCityResponse"/>
+
+<xs:element name="getVehicleByVehicleType" type="tns:getVehicleByVehicleType"/>
+
+<xs:element name="getVehicleByVehicleTypeResponse" type="tns:getVehicleByVehicleTypeResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiatanceByDropAndPickCity">
+<xs:sequence>
+<xs:element name="pickCity" type="xs:int"/>
+<xs:element name="dropCity" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiatanceByDropAndPickCityResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:distance" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="distance">
+<xs:sequence>
+<xs:element name="distance" type="xs:double"/>
+<xs:element name="distanceId" type="xs:int"/>
+<xs:element name="dropCityId" type="xs:int"/>
+<xs:element name="pickCityId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acceptBooking">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+<xs:element name="vehicle_id" type="xs:int"/>
+<xs:element name="driverId" type="xs:int"/>
+<xs:element name="pickCity" type="xs:int"/>
+<xs:element name="dropcity" type="xs:int"/>
+<xs:element name="vehicleType" type="xs:int"/>
+<xs:element name="pickStreet" type="xs:string" minOccurs="0"/>
+<xs:element name="dropStreet" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acceptBookingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleByVehicleType">
+<xs:sequence>
+<xs:element name="vehicleType" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getVehicleByVehicleTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:vehicle" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicle">
+<xs:sequence>
+<xs:element name="driverId" type="xs:int"/>
+<xs:element name="ratePerKm" type="xs:double"/>
+<xs:element name="registerNo" type="xs:string" minOccurs="0"/>
+<xs:element name="vehicleId" type="xs:int"/>
+<xs:element name="vehicleTypeId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authCustomer">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookingsByUserId">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookingsByUserIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:booking" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="booking">
+<xs:sequence>
+<xs:element name="bookingId" type="xs:int"/>
+<xs:element name="driverId" type="xs:int"/>
+<xs:element name="dropCity" type="xs:int"/>
+<xs:element name="dropstreet" type="xs:string" minOccurs="0"/>
+<xs:element name="pickCity" type="xs:int"/>
+<xs:element name="pickStreet" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:int"/>
+<xs:element name="userId" type="xs:int"/>
+<xs:element name="vehicleId" type="xs:int"/>
+<xs:element name="vehicleType" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCustomer">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

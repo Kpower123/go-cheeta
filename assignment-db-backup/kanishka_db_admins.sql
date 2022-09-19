@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:36','2022-08-20 11:02:36'),(4,4,'thilan 2','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:38:41'),(5,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:30:40'),(6,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(7,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(8,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40');
+INSERT INTO `admins` VALUES (1,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','123','2022-08-20 11:02:36','2022-09-16 15:24:28'),(4,4,'thilan 2','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:38:41'),(5,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:30:40'),(6,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(7,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(8,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-20 17:09:36
+-- Dump completed on 2022-09-18 22:21:19

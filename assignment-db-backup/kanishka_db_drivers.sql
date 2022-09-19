@@ -30,6 +30,7 @@ CREATE TABLE `drivers` (
   `mobile` varchar(45) DEFAULT NULL,
   `license_id` varchar(45) DEFAULT NULL,
   `nic` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -42,7 +43,7 @@ CREATE TABLE `drivers` (
 
 LOCK TABLES `drivers` WRITE;
 /*!40000 ALTER TABLE `drivers` DISABLE KEYS */;
-INSERT INTO `drivers` VALUES (5,'f name','l name','b@a.com','44856','B15645','165485','2022-08-19 12:42:10','2022-08-19 12:42:10'),(7,'f name','l name','a@a.com','44856','B15645','981781139v','2022-08-19 13:12:40','2022-08-19 13:12:40'),(8,'f name 2w dsdf wes','f name 2w','a@a.com','44856','B15645','981781139v','2022-08-19 13:43:43','2022-08-20 07:19:24');
+INSERT INTO `drivers` VALUES (5,'f name','l name','b@a.com','44856','B15645','165485','123','2022-08-19 12:42:10','2022-09-17 16:51:38'),(7,'f name','l name','a@a.com','44856','B15645','981781139v','123','2022-08-19 13:12:40','2022-09-17 16:51:38'),(8,'f name 2w dsdf wes','f name 2w','a@a.com','44856','B15645','981781139v','123','2022-08-19 13:43:43','2022-09-17 16:51:38');
 /*!40000 ALTER TABLE `drivers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-20 17:09:36
+-- Dump completed on 2022-09-18 22:21:19
