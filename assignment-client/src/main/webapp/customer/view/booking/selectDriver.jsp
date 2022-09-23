@@ -15,7 +15,7 @@
 <% CustomerWebService customerProxy = customerService.getCustomerWebServicePort(); %>
 <% AdminWebService_Service admminService = new AdminWebService_Service(); %>
 <% AdminWebService adminProxy = admminService.getAdminWebServicePort(); %>
-<% List<Vehicle> vehicles = customerProxy.getVehicleByVehicleType(10); %>
+<% List<Vehicle> vehicles = customerProxy.getVehicleByVehicleType(Integer.parseInt(request.getParameter("vehicleType"))); %>
 <% int pickCity = Integer.parseInt(request.getParameter("pickCity")); %>
 <% int dropCity = Integer.parseInt(request.getParameter("dropCity")); %>
 <% int vehicleType = Integer.parseInt(request.getParameter("vehicleType")); %>
@@ -35,18 +35,7 @@
 
         <%@include file="../../view/include/sideNav.jsp" %>
         <section class="home-section">
-            <nav>
-                <div class="sidebar-button">
-                    <i class='bx bx-menu sidebarBtn'></i>
-                    <span class="dashboard">Dashboard</span>
-                </div>
-
-                <div class="profile-details">
-                    <img src="images/nike.jpg" alt="">
-                    <span class="admin_name">KANIYA</span>
-                    <i class='bx bx-chevron-down' ></i>
-                </div>
-            </nav>
+            <%@include file="../../view/include/navBar.jsp" %>
 
             <div class="home-content">
 
@@ -74,7 +63,7 @@
                                     <td><%= distance.getDistance() %></td>
                                     <td><%= vehicle.getRatePerKm() * distance.getDistance() %></td>
                                     <td>
-                                        <a href="/assignment-client/customer/controller/booking/acceptDriver.jsp?pickCity=<%= pickCity %>&dropCity=<%= dropCity %>&vehicleType=<%= vehicleType %>&pickStreet=<%= pickStreet %>&dropStreet=<%= dropStreet %>&driverId=<%= driver.getPersonID() %>&vehicle_id=<%= vehicle.getVehicleId() %>" class="btn btn-success">Accept</a>
+                                        <a href="/assignment-client/customer/controller/booking/acceptDriver.jsp?pickCity=<%= pickCity %>&dropCity=<%= dropCity %>&vehicleType=<%= vehicleType %>&pickStreet=<%= pickStreet %>&dropStreet=<%= dropStreet %>&driverId=<%= driver.getPersonID() %>&vehicle_id=<%= vehicle.getVehicleId() %>&user_id=<%= id %>" class="btn btn-success">Accept</a>
                                     </td>
                                 </tr>
                                 <% } %>

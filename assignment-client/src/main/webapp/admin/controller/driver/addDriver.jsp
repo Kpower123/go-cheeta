@@ -16,7 +16,7 @@ String d_license = request.getParameter("d_license");
 String nic    = request.getParameter("nic");
     
     HttpSession ses = request.getSession();
-    if(adminProxy.addDriver(f_name, l_name,mobile,email,d_license, nic)) {
+    if(adminProxy.addDriver(f_name,l_name,mobile,email,d_license, nic)) {
         ses.setAttribute("success", "Driver added successful");
     } else {
         ses.setAttribute("error", "Driver added failed");

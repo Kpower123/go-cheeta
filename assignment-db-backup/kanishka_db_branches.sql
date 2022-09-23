@@ -32,7 +32,7 @@ CREATE TABLE `branches` (
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `branches` (
 
 LOCK TABLES `branches` WRITE;
 /*!40000 ALTER TABLE `branches` DISABLE KEYS */;
-INSERT INTO `branches` VALUES (1,'kandy@gocheeta.com','1234567890','123456784','kandy road, kandy','Kandy','2022-09-03 11:28:03','2022-09-03 11:28:03'),(2,'nugegoda@gocheeta.com','1234567890','1234567890','nugegoda road, nugegoda','Nugegoda','2022-09-03 11:29:09','2022-09-03 11:29:09'),(3,'gampaha@gocheeta.com','1234567890','1234567890','gampaha road, gampaha','Gampaha','2022-09-03 11:29:32','2022-09-03 11:29:32'),(4,'kurunegala@gocheeta.com','1234567890','1234567890','krunegala road, kandy','Kurunegala','2022-09-03 11:29:58','2022-09-03 11:29:58'),(5,'jaffna@gocheeta.com','1234567890','1234567890','jaffana road, jaffna','Jaffna','2022-09-03 11:30:29','2022-09-03 11:30:29'),(6,'galle@gocheeta.com','1234567890','0123456789','galle road, galle','Galle','2022-09-03 11:30:50','2022-09-03 11:30:50'),(10,'aa@a.com','76840707','1234567890','address','colombo','2022-09-16 17:15:57','2022-09-16 17:15:57');
+INSERT INTO `branches` VALUES (1,'kandy@gocheeta.com','1234567890','123456784','kandy road, kandy','Kandy','2022-09-03 11:28:03','2022-09-03 11:28:03'),(2,'nugegoda@gocheeta.com','1234567890','1234567890','nugegoda road, nugegoda','Nugegoda','2022-09-03 11:29:09','2022-09-03 11:29:09'),(3,'gampaha@gocheeta.com','1234567890','1234567890','gampaha road, gampaha','Gampaha','2022-09-03 11:29:32','2022-09-03 11:29:32'),(5,'jaffna@gocheeta.com','1234567890','1234567890','jaffana road, jaffna','Jaffna','2022-09-03 11:30:29','2022-09-03 11:30:29'),(10,'aa@a.com22','76840707 123123','1234567890 22','address 22','Colombo','2022-09-16 17:15:57','2022-09-22 17:20:19');
 /*!40000 ALTER TABLE `branches` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 22:21:19
+-- Dump completed on 2022-09-22 23:58:02

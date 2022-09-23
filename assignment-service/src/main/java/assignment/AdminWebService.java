@@ -181,4 +181,14 @@ public class AdminWebService {
     public List<Booking> getLastBookings() {
         return this.adminBL.getLastBookings();
     }
+    
+    @WebMethod(operationName = "authAdmin")
+    public boolean authAdmin(@WebParam(name = "email") String email,@WebParam(name = "password") String password) {
+        return this.adminBL.authAdmin(email, password);
+    }
+    
+    @WebMethod(operationName = "getAdminByEmail")
+    public Admin getAdminByEmail(@WebParam(name = "email") String email) {
+        return this.adminBL.getAdminByEmail(email);
+    }
 }

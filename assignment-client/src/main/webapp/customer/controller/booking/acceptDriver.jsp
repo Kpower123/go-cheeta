@@ -1,7 +1,7 @@
 <%-- 
     Document   : acceptDriver
     Created on : Sep 17, 2022, 9:44:07 AM
-    Author     : kaniya
+    Author     : thilan
 --%>
 <%@page import="assignment.CustomerWebService"%>
 <%@page import="assignment.CustomerWebService_Service"%>
@@ -17,7 +17,7 @@
     int vehicleType   = Integer.parseInt(request.getParameter("vehicleType"));
     int driverId      = Integer.parseInt(request.getParameter("driverId"));
     int vehicleId     = Integer.parseInt(request.getParameter("vehicle_id"));
-    int customerId    = 1;
+    int customerId    = Integer.parseInt(request.getParameter("user_id"));
     
     HttpSession ses = request.getSession();
     if(customerProxy.acceptBooking(customerId, vehicleId, driverId, pickCity, dropCity, vehicleType, pickStreet, dropStreet)) {

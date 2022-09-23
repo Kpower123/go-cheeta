@@ -34,7 +34,7 @@ CREATE TABLE `bookings` (
   `dropStreet` varchar(45) DEFAULT NULL,
   `status` int DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (1,10,5,1,8,17,10,'pick','drop',3),(2,10,5,1,8,17,10,'pick','drop',2),(3,10,5,1,8,17,10,'pick','drop',0);
+INSERT INTO `bookings` VALUES (1,10,5,1,8,17,10,'pick','drop',3),(2,10,5,1,8,17,10,'pick','drop',2),(3,10,5,1,8,17,10,'pick','drop',3),(4,10,5,2,8,29,8,'12/e,behind The Temple','12/e,behind The Temple',1);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 22:21:19
+-- Dump completed on 2022-09-22 23:58:02

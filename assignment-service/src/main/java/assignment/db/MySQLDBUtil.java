@@ -171,7 +171,7 @@ public class MySQLDBUtil implements Util {
             List<Driver> drivers = new ArrayList<>();
 
             while (rs.next()) {
-                Driver driver = new Driver(rs.getString("license_id"), rs.getString("nic"), rs.getInt("id"), rs.getString("firstname"), rs.getString("firstname"), rs.getString("email"), rs.getString("mobile"));
+                Driver driver = new Driver(rs.getString("license_id"), rs.getString("nic"), rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"), rs.getString("mobile"));
                 drivers.add(driver);
             }
             
@@ -201,7 +201,7 @@ public class MySQLDBUtil implements Util {
             this.rs    = this.stmt.executeQuery("CALL `get_driver_id`('"+driverId+"');");
         
             if(rs.next()) {
-                Driver driver = new Driver(rs.getString("license_id"), rs.getString("nic"), rs.getInt("id"), rs.getString("firstname"), rs.getString("firstname"), rs.getString("email"), rs.getString("mobile"));
+                Driver driver = new Driver(rs.getString("license_id"), rs.getString("nic"), rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"), rs.getString("mobile"));
                 return driver;
             } else {
                 return null;
@@ -347,7 +347,7 @@ public class MySQLDBUtil implements Util {
     @Override
     public boolean updateVehicle(Vehicle vehicle) {
         try {
-            this.stmt  = this.con.prepareCall("CALL `add_vehicle`("+vehicle.getDriverId()+", '"+vehicle.getVehicleTypeId()+"', '"+vehicle.getRegisterNo()+"', '"+vehicle.getRatePerKm()+"');");
+            this.stmt  = this.con.prepareCall("CALL `kanishka_db`.`update_vehicle`("+vehicle.getVehicleId()+", "+vehicle.getDriverId()+", "+vehicle.getVehicleTypeId()+", '"+vehicle.getRegisterNo()+"', "+vehicle.getRatePerKm()+");");
             return ((PreparedStatement) this.stmt).executeUpdate() > 0;
         } catch(SQLException e) {
             System.out.println(e.getMessage());
@@ -386,7 +386,7 @@ public class MySQLDBUtil implements Util {
             List<Admin> admins = new ArrayList<>();
 
             while (rs.next()) {
-                Admin admin = new Admin(rs.getInt("id"), rs.getString("password"), rs.getInt("branch_id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("email"), rs.getString("mobile"));
+                Admin admin = new Admin(rs.getInt("branch_id"), rs.getString("password"), rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("email"), rs.getString("mobile"));
                 admins.add(admin);
             }
             
@@ -404,7 +404,7 @@ public class MySQLDBUtil implements Util {
             this.rs    = this.stmt.executeQuery("CALL `get_branch_admin_by_id`('"+adminId+"');");
         
             if(rs.next()) {
-                Admin admin = new Admin(rs.getInt("id"), rs.getString("password"), rs.getInt("branch_id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("email"), rs.getString("mobile"));
+                Admin admin = new Admin(rs.getInt("branch_id"), rs.getString("password"), rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("email"), rs.getString("mobile"));
                 return admin;
             } else {
                 return null;
@@ -526,6 +526,38 @@ public class MySQLDBUtil implements Util {
         }
     }
     
+    @Override
+    public boolean authAdmin(String email, String password) {
+        try {
+                      
+            this.stmt = this.con.createStatement();
+            this.rs   = this.stmt.executeQuery("CALL `auth_admin`('"+email+"','"+password+"');");
+           
+            return rs.next();
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
+    @Override
+    public Admin getAdminByEmail(String email) {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("CALL `get_admin_by_email`('"+email+"');");
+        
+            if(rs.next()) {
+                Admin admin = new Admin(rs.getInt("branch_id"), rs.getString("password"), rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("email"), rs.getString("mobile"));
+                return admin;
+            } else {
+                return null;
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
     //customer 
     @Override
     public boolean addCustomer(Customer customer) {
@@ -622,6 +654,24 @@ public class MySQLDBUtil implements Util {
         }
     }
     
+    @Override
+    public Customer getCustomerByEmail(String email) {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("CALL `get_customer_by_email`('"+email+"');");
+        
+            if(rs.next()) {
+                Customer customer = new Customer(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getString("password"));
+                return customer;
+            } else {
+                return null;
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
     
     // driver
     @Override
@@ -689,6 +739,24 @@ public class MySQLDBUtil implements Util {
         } catch(Exception e) {
             System.out.println(e.getMessage());
             return false;
+        }
+    }
+    
+    @Override
+    public Driver getDriverByEmail(String email) {
+        try {
+            this.stmt  = this.con.createStatement();
+            this.rs    = this.stmt.executeQuery("CALL `get_driver_by_email`('"+email+"');");
+        
+            if(rs.next()) {
+                Driver driver = new Driver(rs.getString("license_id"), rs.getString("nic"), rs.getInt("id"), rs.getString("firstname"), rs.getString("firstname"), rs.getString("email"), rs.getString("mobile"));
+                return driver;
+            } else {
+                return null;
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 }

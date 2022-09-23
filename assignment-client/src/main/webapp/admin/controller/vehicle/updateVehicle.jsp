@@ -17,9 +17,9 @@
     
     HttpSession ses = request.getSession();
     if(adminProxy.updateVehicle(vehicleId, driverId, vehicleTypeId, registerNo, ratePerKm)) {
-        ses.setAttribute("success", "Vehicle Type updated successful");
+        ses.setAttribute("success", "Vehicle updated successful");
     } else {
-        ses.setAttribute("error", "Vehicle Type update failed");
+        ses.setAttribute("error", "Vehicle update failed");
         
     }
     

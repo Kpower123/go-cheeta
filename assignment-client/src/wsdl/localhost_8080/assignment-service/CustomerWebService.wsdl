@@ -16,24 +16,6 @@
 <message name="addCustomerResponse">
 <part name="parameters" element="tns:addCustomerResponse"/>
 </message>
-<message name="getDiatanceByDropAndPickCity">
-<part name="parameters" element="tns:getDiatanceByDropAndPickCity"/>
-</message>
-<message name="getDiatanceByDropAndPickCityResponse">
-<part name="parameters" element="tns:getDiatanceByDropAndPickCityResponse"/>
-</message>
-<message name="getVehicleByVehicleType">
-<part name="parameters" element="tns:getVehicleByVehicleType"/>
-</message>
-<message name="getVehicleByVehicleTypeResponse">
-<part name="parameters" element="tns:getVehicleByVehicleTypeResponse"/>
-</message>
-<message name="getBookingsByUserId">
-<part name="parameters" element="tns:getBookingsByUserId"/>
-</message>
-<message name="getBookingsByUserIdResponse">
-<part name="parameters" element="tns:getBookingsByUserIdResponse"/>
-</message>
 <message name="authCustomer">
 <part name="parameters" element="tns:authCustomer"/>
 </message>
@@ -46,6 +28,30 @@
 <message name="acceptBookingResponse">
 <part name="parameters" element="tns:acceptBookingResponse"/>
 </message>
+<message name="getVehicleByVehicleType">
+<part name="parameters" element="tns:getVehicleByVehicleType"/>
+</message>
+<message name="getVehicleByVehicleTypeResponse">
+<part name="parameters" element="tns:getVehicleByVehicleTypeResponse"/>
+</message>
+<message name="getDiatanceByDropAndPickCity">
+<part name="parameters" element="tns:getDiatanceByDropAndPickCity"/>
+</message>
+<message name="getDiatanceByDropAndPickCityResponse">
+<part name="parameters" element="tns:getDiatanceByDropAndPickCityResponse"/>
+</message>
+<message name="getBookingsByUserId">
+<part name="parameters" element="tns:getBookingsByUserId"/>
+</message>
+<message name="getBookingsByUserIdResponse">
+<part name="parameters" element="tns:getBookingsByUserIdResponse"/>
+</message>
+<message name="getCustomerByEmail">
+<part name="parameters" element="tns:getCustomerByEmail"/>
+</message>
+<message name="getCustomerByEmailResponse">
+<part name="parameters" element="tns:getCustomerByEmailResponse"/>
+</message>
 <portType name="CustomerWebService">
 <operation name="hello">
 <input wsam:Action="http://assignment/CustomerWebService/helloRequest" message="tns:hello"/>
@@ -55,18 +61,6 @@
 <input wsam:Action="http://assignment/CustomerWebService/addCustomerRequest" message="tns:addCustomer"/>
 <output wsam:Action="http://assignment/CustomerWebService/addCustomerResponse" message="tns:addCustomerResponse"/>
 </operation>
-<operation name="getDiatanceByDropAndPickCity">
-<input wsam:Action="http://assignment/CustomerWebService/getDiatanceByDropAndPickCityRequest" message="tns:getDiatanceByDropAndPickCity"/>
-<output wsam:Action="http://assignment/CustomerWebService/getDiatanceByDropAndPickCityResponse" message="tns:getDiatanceByDropAndPickCityResponse"/>
-</operation>
-<operation name="getVehicleByVehicleType">
-<input wsam:Action="http://assignment/CustomerWebService/getVehicleByVehicleTypeRequest" message="tns:getVehicleByVehicleType"/>
-<output wsam:Action="http://assignment/CustomerWebService/getVehicleByVehicleTypeResponse" message="tns:getVehicleByVehicleTypeResponse"/>
-</operation>
-<operation name="getBookingsByUserId">
-<input wsam:Action="http://assignment/CustomerWebService/getBookingsByUserIdRequest" message="tns:getBookingsByUserId"/>
-<output wsam:Action="http://assignment/CustomerWebService/getBookingsByUserIdResponse" message="tns:getBookingsByUserIdResponse"/>
-</operation>
 <operation name="authCustomer">
 <input wsam:Action="http://assignment/CustomerWebService/authCustomerRequest" message="tns:authCustomer"/>
 <output wsam:Action="http://assignment/CustomerWebService/authCustomerResponse" message="tns:authCustomerResponse"/>
@@ -74,6 +68,22 @@
 <operation name="acceptBooking">
 <input wsam:Action="http://assignment/CustomerWebService/acceptBookingRequest" message="tns:acceptBooking"/>
 <output wsam:Action="http://assignment/CustomerWebService/acceptBookingResponse" message="tns:acceptBookingResponse"/>
+</operation>
+<operation name="getVehicleByVehicleType">
+<input wsam:Action="http://assignment/CustomerWebService/getVehicleByVehicleTypeRequest" message="tns:getVehicleByVehicleType"/>
+<output wsam:Action="http://assignment/CustomerWebService/getVehicleByVehicleTypeResponse" message="tns:getVehicleByVehicleTypeResponse"/>
+</operation>
+<operation name="getDiatanceByDropAndPickCity">
+<input wsam:Action="http://assignment/CustomerWebService/getDiatanceByDropAndPickCityRequest" message="tns:getDiatanceByDropAndPickCity"/>
+<output wsam:Action="http://assignment/CustomerWebService/getDiatanceByDropAndPickCityResponse" message="tns:getDiatanceByDropAndPickCityResponse"/>
+</operation>
+<operation name="getBookingsByUserId">
+<input wsam:Action="http://assignment/CustomerWebService/getBookingsByUserIdRequest" message="tns:getBookingsByUserId"/>
+<output wsam:Action="http://assignment/CustomerWebService/getBookingsByUserIdResponse" message="tns:getBookingsByUserIdResponse"/>
+</operation>
+<operation name="getCustomerByEmail">
+<input wsam:Action="http://assignment/CustomerWebService/getCustomerByEmailRequest" message="tns:getCustomerByEmail"/>
+<output wsam:Action="http://assignment/CustomerWebService/getCustomerByEmailResponse" message="tns:getCustomerByEmailResponse"/>
 </operation>
 </portType>
 <binding name="CustomerWebServicePortBinding" type="tns:CustomerWebService">
@@ -96,7 +106,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getDiatanceByDropAndPickCity">
+<operation name="authCustomer">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="acceptBooking">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -114,6 +133,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="getDiatanceByDropAndPickCity">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getBookingsByUserId">
 <soap:operation soapAction=""/>
 <input>
@@ -123,16 +151,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="authCustomer">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="acceptBooking">
+<operation name="getCustomerByEmail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

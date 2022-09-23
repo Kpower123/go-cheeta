@@ -33,7 +33,7 @@ CREATE TABLE `admins` (
   `create` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','123','2022-08-20 11:02:36','2022-09-16 15:24:28'),(4,4,'thilan 2','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:38:41'),(5,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','','2022-08-20 11:02:40','2022-08-20 11:30:40'),(6,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(7,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(8,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40');
+INSERT INTO `admins` VALUES (5,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','123','2022-08-20 11:02:40','2022-09-22 16:58:56'),(6,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(7,5,'thilan','maduranga','0768470707','thilanmaduranga73@gmail.com','vmdfml;vmdf','2022-08-20 11:02:40','2022-08-20 11:02:40'),(9,9,'thilan dwedwe','maduranga dwedwe','0768470707','thilanmaduranga73@gmail.com','','2022-09-21 17:59:48','2022-09-21 18:13:08'),(10,10,'thilan dwedwe','maduranga q','0768470707 dwq','bb@test.com','789','2022-09-22 17:20:46','2022-09-22 17:21:24');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 22:21:19
+-- Dump completed on 2022-09-22 23:58:02

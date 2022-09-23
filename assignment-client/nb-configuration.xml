@@ -17,6 +17,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_DriverWebService>http://localhost:8080/assignment-service/DriverWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_DriverWebService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_CustomerWebService>http://localhost:8080/assignment-service/CustomerWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_CustomerWebService>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_UserWebService>http://localhost:8080/assignment-service/UserWebService?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_UserWebService>
-        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>gfv3ee6</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>gfv4ee7</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
     </properties>
 </project-shared-configuration>

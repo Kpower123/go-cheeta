@@ -1,7 +1,7 @@
 <%-- 
     Document   : form
     Created on : Sep 17, 2022, 8:50:22 AM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,8 +13,6 @@
     int pickCity      = Integer.parseInt(request.getParameter("pick_city"));
     int dropCity      = Integer.parseInt(request.getParameter("drop_city"));
     int vehicleType   = Integer.parseInt(request.getParameter("vehilce_type"));
-
-//    out.print(request.getParameter("vehilce_type"));
     
 
     response.sendRedirect("/assignment-client/customer/view/booking/selectDriver.jsp?pickStreet="+pickStreet+"&dropStreet="+dropStreet+"&pickCity="+pickCity+"&dropCity="+dropCity+"&vehicleType="+vehicleType);

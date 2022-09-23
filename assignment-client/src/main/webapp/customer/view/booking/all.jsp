@@ -30,18 +30,7 @@
 
         <%@include file="../../view/include/sideNav.jsp" %>
         <section class="home-section">
-            <nav>
-                <div class="sidebar-button">
-                    <i class='bx bx-menu sidebarBtn'></i>
-                    <span class="dashboard">Dashboard</span>
-                </div>
-
-                <div class="profile-details">
-                    <img src="images/nike.jpg" alt="">
-                    <span class="admin_name">KANIYA</span>
-                    <i class='bx bx-chevron-down' ></i>
-                </div>
-            </nav>
+            <%@include file="../../view/include/navBar.jsp" %>
 
             <div class="home-content">
 
@@ -63,7 +52,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <% List<Booking> bookings = customerProxy.getBookingsByUserId(1); %>
+                                <% List<Booking> bookings = customerProxy.getBookingsByUserId(id); %>
                                 <% for(Booking booking: bookings) { %>
                                 <% Branch pickBranch  = adminProxy.getBranchById(booking.getPickCity()); %>
                                 <% Branch dropBranch = adminProxy.getBranchById(booking.getDropCity()); %>

@@ -30,7 +30,7 @@ CREATE TABLE `customers` (
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'customer name','cus1@a.com','123','2022-09-03 11:12:50','2022-09-03 11:12:50'),(2,'customer','a@a.com','123','2022-09-16 15:38:23','2022-09-16 15:38:23');
+INSERT INTO `customers` VALUES (1,'customer name','cus1@a.com','123','2022-09-03 11:12:50','2022-09-03 11:12:50'),(2,'customer','a@a.com','123','2022-09-16 15:38:23','2022-09-16 15:38:23'),(3,'my customer','bb@a.com','123','2022-09-22 18:18:05','2022-09-22 18:18:05'),(4,'null','null','null','2022-09-22 18:24:07','2022-09-22 18:24:07'),(5,'test customer','test@customer.com','123','2022-09-22 18:25:45','2022-09-22 18:25:45');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-18 22:21:19
+-- Dump completed on 2022-09-22 23:58:02

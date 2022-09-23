@@ -1,7 +1,7 @@
 <%-- 
     Document   : wslAdminConnection
     Created on : Aug 13, 2022, 1:10:17 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page import="assignment.AdminWebService"%>

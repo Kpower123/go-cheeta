@@ -3,7 +3,31 @@
     Created on : Sep 17, 2022, 9:49:51 PM
     Author     : thilan
 --%>
+<%
+    
+    String email    = "";
+    String name     = "";
+    int id          = 0;
 
+    HttpSession sesions = request.getSession();
+    for (Cookie cookie : request.getCookies()) {
+        if (cookie.getName().equals("CUSTOMEREMAIL")) {
+            email = cookie.getValue();
+        }
+        if (cookie.getName().equals("CUSTOMERNAME")) {
+            name = cookie.getValue();
+        }
+        if (cookie.getName().equals("CUSTOMERID")) {
+            id = Integer.parseInt(cookie.getValue());
+        }
+    }
+    
+    if(email == "") {
+        sesions.setAttribute("error", "Cookie expired");
+        response.sendRedirect("/assignment-client/customer/login.jsp");
+    }
+
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div class="sidebar">
@@ -13,9 +37,12 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="#" class="active">
+            <a href="/assignment-client/customer/view/booking/form.jsp" class="
+               <% if(request.getRequestURI().equals("/assignment-client/customer/view/booking/form.jsp")) { %>
+               active
+               <% } %>">
                 <i class='bx bx-grid-alt' ></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">New Booking</span>
             </a>
         </li>
         
@@ -24,7 +51,7 @@
                <% if(request.getRequestURI().equals("/assignment-client/customer/view/booking/all.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bx-bookmark-alt-plus' ></i>
                 <span class="links_name">All booking</span>
             </a>
         </li>               

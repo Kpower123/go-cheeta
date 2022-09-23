@@ -47,6 +47,8 @@ public interface Util {
     public int getAllVehicleCount();
     public int getAllDriverCount();
     public List<Booking> getLastBookings();
+    public boolean authAdmin(String email, String password);
+    public Admin getAdminByEmail(String email);
     
     
     
@@ -58,6 +60,7 @@ public interface Util {
     public Distance getDiatanceByDropAndPickCity(int pickCity, int dropCity);
     public boolean acceptBooking(Booking booking);
     public List<Booking> getBookingsByUserId(int userId);
+    public Customer getCustomerByEmail(String email);
 
     //driver
     public boolean authDriver(String email, String password);
@@ -65,6 +68,15 @@ public interface Util {
     public boolean acceptDriverBooking(int bookingId);
     public boolean rejectBooking(int bookingId);
     public boolean completeBooking(int bookingId);
+    public Driver getDriverByEmail(String email);
+
+    
+
+    
+
+    
+
+    
 
     
 

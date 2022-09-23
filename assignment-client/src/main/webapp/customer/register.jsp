@@ -1,7 +1,7 @@
 <%-- 
     Document   : register
     Created on : Sep 3, 2022, 2:09:50 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

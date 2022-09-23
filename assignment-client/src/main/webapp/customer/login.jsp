@@ -1,7 +1,7 @@
 <%-- 
     Document   : login.jsp
     Created on : Sep 3, 2022, 1:50:25 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assignment-client/assets/css/login.css">
         <link rel="stylesheet" href="/assignment-client/assets/bootstrap/css/bootstrap.min.css">
-        <title>Admin Login</title>
+        <title>Customer Login</title>
     </head>
     <body>
         <div class="container">
@@ -48,6 +48,13 @@
                             <span class="button__text">Log In Now</span>
                             <i class="button__icon fas fa-chevron-right"></i>
                         </button>				
+                        
+                        <a href="/assignment-client/customer/register.jsp">
+                            <button class="button login__submit" type="button">
+                                <span class="button__text">Register</span>
+                                <i class="button__icon fas fa-chevron-right"></i>
+                            </button>
+                        </a>				
                     </form>
                     <div class="social-login">
                         <div class="social-icons">

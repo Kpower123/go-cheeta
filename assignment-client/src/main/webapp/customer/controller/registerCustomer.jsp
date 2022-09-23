@@ -1,7 +1,7 @@
 <%-- 
     Document   : registerCustomer
     Created on : Sep 3, 2022, 2:12:55 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page import="assignment.CustomerWebService"%>
@@ -19,9 +19,9 @@
     
     HttpSession ses = request.getSession();
     if(customerProxy.addCustomer(name, email, password)) {
-        ses.setAttribute("success", "Vehicle Type added successful");
+        ses.setAttribute("success", "Customer added successful");
     } else {
-        ses.setAttribute("error", "Vehicle Type added failed");
+        ses.setAttribute("error", "Customer added failed");
     }
     
     response.sendRedirect("/assignment-client/customer/login.jsp");

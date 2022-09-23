@@ -1,11 +1,38 @@
 <%-- 
     Document   : sidenav
     Created on : Aug 13, 2022, 12:06:31 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    
+    String email    = "";
+    String name     = "";
+    int id          = 0;
+
+    HttpSession sesions = request.getSession();
+    for (Cookie cookie : request.getCookies()) {
+        if (cookie.getName().equals("ADMINEMAIL")) {
+            email = cookie.getValue();
+        }
+        if (cookie.getName().equals("ADMINFULLNAME")) {
+            name = cookie.getValue();
+        }
+        if (cookie.getName().equals("ADMINID")) {
+            id = Integer.parseInt(cookie.getValue());
+        }
+    }
+    
+    
+    
+    if(email == "") {
+        sesions.setAttribute("error", "Cookie expired");
+        response.sendRedirect("/assignment-client/admin/view/login.jsp");
+    }
+
+%>
 <div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
@@ -27,7 +54,7 @@
                <% if(request.getRequestURI().equals("/assignment-client/admin/view/branch/addBranch.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bx-git-branch' ></i>
                 <span class="links_name">Branch</span>
             </a>
         </li>
@@ -37,7 +64,7 @@
                <% if(request.getRequestURI().equals("/assignment-client/admin/view/branch/addAdmin.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bx-group' ></i>
                 <span class="links_name">Branch Admin</span>
             </a>
         </li>
@@ -47,7 +74,7 @@
                <% if(request.getRequestURI().equals("/assignment-client/admin/view/driver/addDriver.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bx-user-plus' ></i>
                 <span class="links_name">Driver</span>
             </a>
         </li>
@@ -57,7 +84,7 @@
                <% if(request.getRequestURI().equals("/assignment-client/admin/view/vehicle/addType.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bx-search' ></i>
                 <span class="links_name">Vehicle Type</span>
             </a>
         </li>
@@ -67,77 +94,9 @@
                <% if(request.getRequestURI().equals("/assignment-client/admin/view/vehicle/add.jsp")) { %>
                active
                <% } %>">
-                <i class='bx bx-box' ></i>
+                <i class='bx bxs-car-crash' ></i>
                 <span class="links_name">Vehicle</span>
             </a>
         </li>
-        
-<!--        <li>
-            <a href="/assignment-client/admin/view/distance/all.jsp" class="
-               <% if(request.getRequestURI().equals("/assignment-client/admin/view/distance/all.jsp")) { %>
-               active
-               <% } %>">
-                <i class='bx bx-box' ></i>
-                <span class="links_name">Distance</span>
-            </a>
-        </li>-->
-        
-        
-        
-        
-<!--        <li>
-            <a href="#">
-                <i class='bx bx-list-ul' ></i>
-                <span class="links_name">Order list</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-pie-chart-alt-2' ></i>
-                <span class="links_name">Analytics</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-coin-stack' ></i>
-                <span class="links_name">Stock</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-book-alt' ></i>
-                <span class="links_name">Total order</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-user' ></i>
-                <span class="links_name">Team</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-message' ></i>
-                <span class="links_name">Messages</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-heart' ></i>
-                <span class="links_name">Favrorites</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-cog' ></i>
-                <span class="links_name">Setting</span>
-            </a>
-        </li>
-        <li class="log_out">
-            <a href="#">
-                <i class='bx bx-log-out'></i>
-                <span class="links_name">Log out</span>
-            </a>
-        </li>-->
     </ul>
 </div>

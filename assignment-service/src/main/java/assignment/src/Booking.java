@@ -6,7 +6,7 @@ package assignment.src;
 
 /**
  *
- * @author kaniya
+ * @author thilan
  */
 public class Booking {
     private int bookingId;

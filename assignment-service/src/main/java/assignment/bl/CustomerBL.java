@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author kaniya
+ * @author thilan
  */
 public class CustomerBL {
     private final Util util = new MySQLDBUtil();
@@ -43,6 +43,10 @@ public class CustomerBL {
 
     public List<Booking> getBookingsByUserId(int userId) {
         return this.util.getBookingsByUserId(userId);
+    }
+
+    public Customer getCustomerByEmail(String email) {
+        return this.util.getCustomerByEmail(email);
     }
     
 }

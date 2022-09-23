@@ -17,6 +17,9 @@
     String password         = request.getParameter("password");
     
     HttpSession ses = request.getSession();
+        
+    
+//    out.print(adminProxy.updateBranchAdmin(adminId, branchId, firstName, lastName, email, mobile, password));
     
     if(adminProxy.updateBranchAdmin(adminId, branchId, firstName, lastName, email, mobile, password)) {
         ses.setAttribute("success", "Branch Admin updated successful");

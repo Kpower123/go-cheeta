@@ -6,12 +6,13 @@ package assignment.bl;
 
 import assignment.db.MySQLDBUtil;
 import assignment.src.Booking;
+import assignment.src.Driver;
 import assignment.src.Util;
 import java.util.List;
 
 /**
  *
- * @author kaniya
+ * @author thilan
  */
 public class DriverBL {
     private final Util util = new MySQLDBUtil();
@@ -34,5 +35,9 @@ public class DriverBL {
 
     public boolean completeBooking(int bookingId) {
         return this.util.completeBooking(bookingId);
+    }
+
+    public Driver getDriverByEmail(String email) {
+        return this.util.getDriverByEmail(email);
     }
 }

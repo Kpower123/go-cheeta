@@ -1,7 +1,7 @@
 <%-- 
     Document   : addAdmin
     Created on : Aug 20, 2022, 3:39:25 PM
-    Author     : kaniya
+    Author     : thilan
 --%>
 
 <%@page import="assignment.Admin"%>
@@ -30,18 +30,7 @@
 
         <%@include file="../../includes/html/sidenav.jsp" %>
         <section class="home-section">
-            <nav>
-                <div class="sidebar-button">
-                    <i class='bx bx-menu sidebarBtn'></i>
-                    <span class="dashboard">Dashboard</span>
-                </div>
-
-                <div class="profile-details">
-                    <img src="images/nike.jpg" alt="">
-                    <span class="admin_name">Admin</span>
-                    <i class='bx bx-chevron-down' ></i>
-                </div>
-            </nav>
+            <%@include file="../../includes/html/navBar.jsp" %>
 
             <div class="home-content">
 
@@ -120,8 +109,8 @@
                                     <td><% out.print(admin.getMobile()); %></td>
                                     
                                     <td>
-                                        <a href="./editBranchAdmin.jsp?id=<% out.print(admin.getBranchId()); %>" class="btn btn-sm btn-warning"><i class="mdi mdi-file-document-edit-outline align-middle me-1"></i>Edit</a>
-                                        <a href="/assignment-client/admin/controller/branch/deleteBranchAdmin.jsp?id=<% out.print(admin.getBranchId()); %>" class="btn btn-sm btn-danger"><i class="mdi mdi-delete-forever-outline align-middle me-1"></i>Delete</a>
+                                        <a href="./editBranchAdmin.jsp?id=<% out.print(admin.getPersonID()); %>" class="btn btn-sm btn-warning"><i class="mdi mdi-file-document-edit-outline align-middle me-1"></i>Edit</a>
+                                        <a href="/assignment-client/admin/controller/branch/deleteBranchAdmin.jsp?id=<% out.print(admin.getPersonID()); %>" class="btn btn-sm btn-danger"><i class="mdi mdi-delete-forever-outline align-middle me-1"></i>Delete</a>
                                     </td>
                                 </tr>
                                 

@@ -44,7 +44,7 @@ public class AdminBL {
     }
 
     public boolean addDriver(String firstName, String lastName, String mobile, String email, String dLicense, String nic) {
-        Driver driver =new Driver(dLicense, nic, 0, firstName, lastName, email, mobile);
+        Driver driver = new Driver(dLicense, nic, 0, firstName, lastName, email, mobile);
         return this.util.addDriver(driver);
     }
 
@@ -123,7 +123,7 @@ public class AdminBL {
     }
 
     public boolean updateBranchAdmin(int branchAdminId, int branchId, String firstName, String lastName, String email, String mobile, String password) {
-        Admin admin = new Admin(branchId, password, branchAdminId, firstName, lastName, email, mobile);
+        Admin admin = new Admin(branchAdminId, password, branchId, firstName, lastName, email, mobile);
         return this.util.updateBranchAdmin(admin);
     }
 
@@ -149,5 +149,13 @@ public class AdminBL {
 
     public List<Booking> getLastBookings() {
         return this.util.getLastBookings();
+    }
+
+    public boolean authAdmin(String email, String password) {
+        return this.util.authAdmin(email, password);
+    }
+
+    public Admin getAdminByEmail(String email) {
+        return this.util.getAdminByEmail(email);
     }
 }

@@ -34,19 +34,7 @@
 
         <%@include file="../../view/include/sideNav.jsp" %>
         <section class="home-section">
-            <nav>
-                <div class="sidebar-button">
-                    <i class='bx bx-menu sidebarBtn'></i>
-                    <span class="dashboard">Dashboard</span>
-                </div>
-
-                <div class="profile-details">
-                    <img src="images/nike.jpg" alt="">
-                    <!--<a href="url" style="color: inherit; text-decoration: none">Customer LogOut</a>-->
-                    <span class="admin_name">Customer LogOut</span>
-                    <i class='bx bx-chevron-down' ></i>
-                </div>
-            </nav>
+            <%@include file="../../view/include/navbar.jsp" %>
 
             <div class="home-content">
 

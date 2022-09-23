@@ -6,6 +6,7 @@ package assignment;
 
 import assignment.bl.CustomerBL;
 import assignment.src.Booking;
+import assignment.src.Customer;
 import assignment.src.Distance;
 import assignment.src.Driver;
 import assignment.src.Vehicle;
@@ -16,7 +17,7 @@ import javax.jws.WebParam;
 
 /**
  *
- * @author kaniya
+ * @author thilan
  */
 @WebService(serviceName = "CustomerWebService")
 public class CustomerWebService {
@@ -58,5 +59,10 @@ public class CustomerWebService {
     @WebMethod(operationName = "getBookingsByUserId")
     public List<Booking> getBookingsByUserId(@WebParam(name = "userId") int userId) {
         return this.cutomerBl.getBookingsByUserId(userId);
+    }
+    
+    @WebMethod(operationName = "getCustomerByEmail")
+    public Customer getCustomerByEmail(@WebParam(name = "email") String email) {
+        return this.cutomerBl.getCustomerByEmail(email);
     }
 }
